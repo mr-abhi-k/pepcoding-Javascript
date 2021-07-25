@@ -1,0 +1,7 @@
+let fs=require("fs")
+let content=fs.readFileSync("ex1.txt")
+//console.log("content",content)
+console.log("content"+content)
+//fs.writeFileSync("ex2.txt","abhishek")
+//fs.appendFileSync("ex2.txt"," Kumar ")
+fs.unlinkSync("ex2.txt")
