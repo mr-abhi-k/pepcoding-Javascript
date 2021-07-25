@@ -12,7 +12,7 @@ if(filename ==="tree")
 }
 else if(filename ==="organize")
 {
-    console.log(orgpath.orgprint())
+    console.log(orgpath.orgprint(path))
 }
 else if(filename ==="help")
 {
