@@ -1,7 +1,7 @@
 function print()
 {
-    let cwd=process.cwd
-    console.log("help command executed with path :")
+    console.log("List of all commands :")
+    console.log("\t\t node main.js tree 'directory path' ")
 }
 
 module.exports={

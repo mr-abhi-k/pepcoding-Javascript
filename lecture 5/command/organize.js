@@ -10,7 +10,7 @@ let types =
     app: ['exe', 'dmg', 'pkg', "deb"]
 }
 
-// 😉 sending files function 🛫🛫🛫🛫🛫
+// 😉 sending files function 🛫
 function sendingfile(srcpath,destpath,category)
 {
     console.log(srcpath)
@@ -19,18 +19,21 @@ function sendingfile(srcpath,destpath,category)
     //F:\Pepcoding\web dev\random folder\organized_files
     console.log(category)
     //documents
-
+    
     //😅
     let categorypath=path.join(destpath,category) //creating category path like media,images
     let existcategory=fs.existsSync(categorypath) //checkng for folder
     //console.log(existcategory)
 
-    if(existcategory=="false")
+    if(existcategory == false)
     {
         destpath=path.join(destpath,category)
         fs.mkdirSync(destpath)
     }
-
+    else
+    {
+        destpath=path.join(destpath,category)
+    }
     //😁
     //destpath=path.join(destpath,category)
     let fileName = path.basename(srcpath);
@@ -51,6 +54,7 @@ function print(src)
 
     let allentity=fs.readdirSync(srcpath)
 
+        console.log(allentity.length)
     for(let i=0;i<allentity.length;i++)
     {
         let srcfilepath=path.join(srcpath,allentity[i]) //got file address
@@ -61,10 +65,11 @@ function print(src)
         
         for(let j in types) //this loop is used for objects
         {
-            for(let k=0;k<types[j].length;k++)
+            let newVar = types[j];
+            for(let k=0;k<newVar.length;k++)
             {
                 //console.log(types[j].length)
-                //console.log(types[j][k])
+                console.log(types[j][k])
                 let temp=types[j][k]
                 //console.log(j)
                 if(extname === temp)
